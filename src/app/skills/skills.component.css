@@ -16,3 +16,7 @@
     color: black;
     cursor: default;
 }
+
+.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-description {
+    color: rgba(0,0,0,.54);;
+}

@@ -1,106 +1,110 @@
-<div class="row my-2">
-    <div class="col"></div>
-    <div class="col-8">
-        <div class="h3">
-            Languages
+<div class="container">
+    <div class="row my-2">
+        <div class="col"></div>
+        <div class="col-8">
+            <div class="h3">
+                Languages
+            </div>
+            <mat-accordion class="full-width headers-align">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Java
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Versions: 8+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>
+                        Java is the language I have worked on the most.
+                        The most common use of Java I work on is creating Spring Boot microservices.
+                        These services touch on many different technologies, including:
+                    </p>
+                    <ul>
+                        <li>JDBC Connections</li>
+                        <li>ORM with Hibernate</li>
+                        <li>Authentication and Authorization using Oauth</li>
+                        <li>Various AWS services</li>
+                    </ul>
+
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Typescript / Javascript
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Versions: 8+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>
+                        TS and JS are my second most used languages, and TS is my current favorite to use,
+                        and is my go to for personal projects.
+                        My main use of this language is in Angular frontends,
+                        however, I also have experience writing Node.JS applications.
+                    </p>
+                    <p>
+                        For example, I have used Express to build backend services,
+                        for example, a microservice that manages an AWS Step Function workflow,
+                        including invoking, cancelling, retrying, an viewing details.
+                    </p>
+                    <p>
+                        Additionally, I have built a CLI tool using TS that automatically scans a users AD group
+                        membership
+                        to discover what AWS credentials they have access to, and then automatically fetches and
+                        refreshes
+                        the credentials.
+                        This tool has become quite popular, and is not preinstalled on newly provisioned Linux developer
+                        desktops.
+                    </p>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Python
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Versions 3.6+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>
+                        I have started using python more frequently recently in recent years.
+                        The increase in use started with me using it in my Intro to Machine Learning
+                        and Intro to Artificial Intelligence to implement ML and AI algorithms.
+                    </p>
+                    <p>
+                        Additionally, I have started using python more at work as well.
+                        One example is on a microservice that predicts if a database column contains
+                        PII to aid GDPR and CCPA compliance.
+                    </p>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <div class="h3 mt-2">
+                Technical Tools and Frameworks
+            </div>
+            <mat-accordion class="full-width headers-align">
+                <mat-expansion-panel [disabled]="!skill.description" *ngFor="let skill of skills">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{skill.name}}
+                        </mat-panel-title>
+                        <mat-panel-description *ngIf="skill.subtitle">
+                            {{skill.subtitle}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p *ngFor="let desc of skill.description">
+                        {{desc}}
+                    </p>
+                    <ul *ngIf="skill.subskills">
+                        <li *ngFor="let subskill of skill.subskills">
+                            {{subskill}}
+                        </li>
+                    </ul>
+                </mat-expansion-panel>
+
+            </mat-accordion>
         </div>
-        <mat-accordion class="full-width headers-align">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Java
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        Versions: 8+
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>
-                    Java is the language I have worked on the most.
-                    The most common use of Java I work on is creating Spring Boot microservices.
-                    These services touch on many different technologies, including:
-                </p>
-                <ul>
-                    <li>JDBC Connections</li>
-                    <li>ORM with Hibernate</li>
-                    <li>Authentication and Authorization using Oauth</li>
-                    <li>Various AWS services</li>
-                </ul>
-
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Typescript / Javascript
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        Versions: 8+
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>
-                    TS and JS are my second most used languages, and TS is my current favorite to use,
-                    and is my go to for personal projects.
-                    My main use of this language is in Angular frontends,
-                    however, I also have experience writing Node.JS applications.
-                </p>
-                <p>
-                    For example, I have used Express to build backend services,
-                    for example, a microservice that manages an AWS Step Function workflow,
-                    including invoking, cancelling, retrying, an viewing details.
-                </p>
-                <p>
-                    Additionally, I have built a CLI tool using TS that automatically scans a users AD group membership
-                    to discover what AWS credentials they have access to, and then automatically fetches and refreshes
-                    the credentials.
-                    This tool has become quite popular, and is not preinstalled on newly provisioned Linux developer
-                    desktops.
-                </p>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Python
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        Versions 3.6+
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>
-                    I have started using python more frequently recently in recent years.
-                    The increase in use started with me using it in my Intro to Machine Learning
-                    and Intro to Artificial Intelligence to implement ML and AI algorithms.
-                </p>
-                <p>
-                    Additionally, I have started using python more at work as well.
-                    One example is on a microservice that predicts if a database column contains
-                    PII to aid GDPR and CCPA compliance.
-                </p>
-            </mat-expansion-panel>
-        </mat-accordion>
-
-        <div class="h3 mt-2">
-            Technical Tools and Frameworks
-        </div>
-        <mat-accordion class="full-width headers-align">
-            <mat-expansion-panel [disabled]="!skill.description" *ngFor="let skill of skills">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        {{skill.name}}
-                    </mat-panel-title>
-                    <mat-panel-description *ngIf="skill.subtitle">
-                        {{skill.subtitle}}
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p *ngFor="let desc of skill.description">
-                    {{desc}}
-                </p>
-                <ul *ngIf="skill.subskills">
-                    <li *ngFor="let subskill of skill.subskills">
-                        {{subskill}}
-                    </li>
-                </ul>
-            </mat-expansion-panel>
-
-        </mat-accordion>
+        <div class="col"></div>
     </div>
-    <div class="col"></div>
 </div>
