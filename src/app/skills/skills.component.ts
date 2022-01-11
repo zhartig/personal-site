@@ -99,7 +99,14 @@ export class SkillsComponent implements OnInit {
         },
         {
             domain: 'Miscellaneous',
-            name: 'Puppeteer'
+            name: 'Puppeteer',
+            description: [
+                'Puppeteer is one of my favorite tools since it has allowed me to automate tasks where there is not an API available.',
+                `This has come in very useful at work, where I used to automate the initiazation and running of deployments, giving my team access to full CI/CD pipelines
+                over a year before a similar capability was available for general use.`,
+                `I also used it to automate the submission of requests for LDAP group access where the user just need to supply a JSON describing what users to add to what groups.`,
+                `Outside of work, I have used puppeteer to build a crawler for finding open Covid vaccine appointments, and then sending text messages when it finds availability.`
+            ]
         },
         {
             domain: 'Backend',

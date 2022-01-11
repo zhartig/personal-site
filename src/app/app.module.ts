@@ -10,13 +10,15 @@ import {MatCardModule} from "@angular/material/card";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { EducationComponent } from './education/education.component';
 import { HomeComponent } from './home/home.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SkillsComponent,
     EducationComponent,
-    HomeComponent
+    HomeComponent,
+    ProjectsComponent
   ],
     imports: [
         BrowserModule,
