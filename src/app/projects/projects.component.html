@@ -11,6 +11,9 @@
                         <mat-panel-title>
                             {{skill.name}}
                         </mat-panel-title>
+                        <mat-panel-description *ngIf="skill.time">
+                            {{skill.time}}
+                        </mat-panel-description>
                     </mat-expansion-panel-header>
                     <p *ngFor="let desc of skill.description">
                         {{desc}}
@@ -27,6 +30,9 @@
                         <mat-panel-title>
                             {{skill.name}}
                         </mat-panel-title>
+                        <mat-panel-description *ngIf="skill.time">
+                            {{skill.time}}
+                        </mat-panel-description>
                     </mat-expansion-panel-header>
                     <p *ngFor="let desc of skill.description">
                         {{desc}}

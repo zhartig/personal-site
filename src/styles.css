@@ -9,3 +9,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .full-height {
     height: 100%;
 }
+
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.mat-expansion-panel-header[aria-disabled=true] {
+    color: black;
+    cursor: default;
+}
+
+.mat-expansion-panel-header[aria-disabled="true"] .mat-expansion-panel-header-description {
+    color: rgba(0,0,0,.54);;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.font-weight-light {
+    font-weight: lighter;
+}

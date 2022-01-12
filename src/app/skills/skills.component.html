@@ -86,7 +86,7 @@
             <mat-accordion class="full-width headers-align">
                 <mat-expansion-panel [disabled]="!skill.description" *ngFor="let skill of skills">
                     <mat-expansion-panel-header>
-                        <mat-panel-title>
+                        <mat-panel-title [class.font-weight-bold]="skill.pinned">
                             {{skill.name}}
                         </mat-panel-title>
                         <mat-panel-description *ngIf="skill.subtitle">
