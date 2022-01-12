@@ -1,1 +1,39 @@
-<p>projects works!</p>
+<div class="container">
+    <div class="row my-2">
+        <div class="col"></div>
+        <div class="col-8">
+            <div class="h3">
+                Work
+            </div>
+            <mat-accordion class="full-width headers-align">
+                <mat-expansion-panel [disabled]="!skill.description" *ngFor="let skill of workProjects">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{skill.name}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p *ngFor="let desc of skill.description">
+                        {{desc}}
+                    </p>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <div class="h3 mt-2">
+                Personal
+            </div>
+            <mat-accordion class="full-width headers-align">
+                <mat-expansion-panel [disabled]="!skill.description" *ngFor="let skill of personalProjects">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{skill.name}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p *ngFor="let desc of skill.description">
+                        {{desc}}
+                    </p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
