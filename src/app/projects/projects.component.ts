@@ -10,11 +10,20 @@ export class ProjectsComponent implements OnInit {
 
   workProjects: Project[] = [
     {
-      name: 'Qualified Default Investment Alternative',
+      name: 'Qualified Default Investment Alternative (QDIA)',
       time: 'March 2021 - Present',
       employer: 'T. Rowe Price',
       description: [
-
+        `The QDIA project is a high level strategic initiative at T. Rowe Price to revamp the QDIA offering in 401k plans.`,
+        `At the core of project is a model created by a research team at T. Rowe Price.  This model is written in matlab,
+        and takes a very long time to compute on a single computer.  To solve this, I implemented a state machine using
+        AWS's Step Function service, which will divide up the work to a variable number of servers, and load the outputted
+        model into a database for consumption by the API that consumes the model to make predictions.  This brought the time
+        to compute the model down from weeks to a few hours.  Additionally, I developed a CI pipeline that compiles the
+        matlab code so that it can be run without a license. At this point, we are generating models that use over 5 years
+        of server time to generate the model in only 36 hours.`,
+        `Additionally, I have worked to define the API schema that will be consumed by the public facing website, and a quarterly
+        batch job, and implemented the skeleton of this into the service that will receive the requests.`
       ]
     },
     {
