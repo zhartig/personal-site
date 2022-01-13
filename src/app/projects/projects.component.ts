@@ -27,11 +27,11 @@ export class ProjectsComponent implements OnInit {
       ]
     },
     {
-      name: 'Enterprise Nifi Environment',
+      name: 'Enterprise NiFi Environment',
       time: 'May 2020 - September 2020',
       employer: 'T. Rowe Price',
       description: [
-
+        `This is a POC project I worked on to build out an enterprise ready instance of NiFi ready for multi-tenant use.`
       ]
     },
     {
