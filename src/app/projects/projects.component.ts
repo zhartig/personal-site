@@ -31,7 +31,13 @@ export class ProjectsComponent implements OnInit {
       time: 'May 2020 - September 2020',
       employer: 'T. Rowe Price',
       description: [
-        `This is a POC project I worked on to build out an enterprise ready instance of NiFi ready for multi-tenant use.`
+        `This is a POC project I worked on to build out an enterprise ready instance of NiFi ready for multi-tenant use.
+        As a part of this effort, I researched into how to run NiFi in a clustered environment and connecting it to
+        a centralized NiFi Registry for versioning and storage of flows.`,
+        `The result of this was a set of Docker containers that are preconfigured to connect together.`,
+        `I also helped to define how users would onboard to use the NiFi environment in a self-service way, and how
+        deployed containers could connect to retrieve secrets needed for the configured flows.  Additionally, I helped
+        to design the process to move NiFi flows from development to production environments.`
       ]
     },
     {
@@ -39,7 +45,12 @@ export class ProjectsComponent implements OnInit {
       employer: 'T. Rowe Price',
       time: 'February 2018 - Present',
       description: [
-
+        `describe product`,
+        `describe ML detection`,
+        `Starting in 2021, I became the technical lead for the development on this project.  As lead, my resposniblity
+        was to engage with the product owner to prioritize, refine, and break down work into stories that were then brought into
+        my team's sprints.  I then delegated the stories as necessary, as well as helped architect the software solutions,
+        and reviewing the code when the story is completed.`
       ]
     },
     {
@@ -54,11 +65,13 @@ export class ProjectsComponent implements OnInit {
       name: 'Miscellaneous',
       employer: 'T. Rowe Price',
       description: [
-        `CI/CD Templates`,
-        `Mentor?`,
+        `I have created template yml files that my team uses to build and deploy our projects.  These templates make it
+        so when you have a new project or component, you only need to import the templates, and set environment variables specific to the project.
+        I also created a script that enabled continuous deployment with the firm's deployment platform over a year before
+        a similar feature was released by the deployment platform.`,
         `Auto MAR`,
-        `Upgrade versions`,
-        'Ask Trusty',
+        'Recently, a question and answer forum was added at T. Rowe Price for developers to ask questions that are specific' +
+        'to the company.  Since the product became generally available, I have become the highest rated user on the platform.',
         'Splunk'
       ]
     },
