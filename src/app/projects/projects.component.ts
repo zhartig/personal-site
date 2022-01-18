@@ -48,9 +48,18 @@ export class ProjectsComponent implements OnInit {
       employer: 'T. Rowe Price',
       time: 'February 2018 - Present',
       description: [
-        `TODO describe product`,
+        `This is an application that acts as the central enterprise repository of business, technical, and logical metadata, 
+        replacing the non-standardized processes used by different business units.  The products offers many different functionalities,
+        including authoring of business metadata with a rich text editor, importing of erwin data models, and automatic 
+        discovery of technical metadata.  Additionally, users could author lineage information so that other users
+        can see how data is moving from system to system.`,
 
-        `TODO describe ML detection`,
+        `Another key feature is PII detection, which is a key tool for GDPR and CCPA compliance for the firm.
+        This process works by first building a database of known PII sources from the different master sources at T. Rowe;
+        the data is stored salted and hashed.  Data owners can then run discovery crawls on their databases, in which the
+        product will scan their datasource apply the same hashing logic, and feed machine learning models that output the
+        predicted types of PII that are present.  The data owner is then presented a report of the PII detections, and they
+        are able to accept or reject the system's recommendations.`,
 
         `Starting in 2021, I became the technical lead for the development on this project.  As lead, my responsibility
         was to engage with the product owner to prioritize, refine, and break down work into stories that were then brought into
@@ -63,15 +72,21 @@ export class ProjectsComponent implements OnInit {
       time: 'June 2017 - Present',
       employer: 'T. Rowe Price',
       description: [
-        `TODO sync`,
+        `This project is a centralized, self service file transfer application running in AWS.  It makes the exchange 
+        of files between external parties and on-prem resources easy by giving user's the ability to control their 
+        transfers through a simple JSON configuration and a UI with a IDE like experience and a graph based experience
+        authoring these configurations.  The product integrates with SFTP, FTPS, and S3 for sending and receiving files.`,
 
-        `TODO alerts`,
+        `One of the first features I implemented at T. Rowe was the file sync capability in the platforms managed pulls.
+        Before this, everytime a scheduled file pull would happen, all files matching the provided pattern were downloaded.
+        After implementing this feature, scheduled pulls that previously took hours started running in under 1 minute, enabling
+        consumers to poll for files more frequently.`,
 
-        `TODO queue manager`,
-
-        `TODO websockets`,
-
-        `TODO IAM external access`
+        `In order to make the system scalable and fault tolerant, file transfers are decoupled and queued using SQS.
+        When issues arise, this could result in the file transfers being placed in the dead letter queue.  To reprocess
+        these file transfers, we would need to get temporary elevated access to requeue the transfer.  To solve this, I 
+        built out a service that gives management of SQS in a user friendly UI.  This service was later expanded upon and
+        released as a deployable microservice for any team to use in their application.`,
 
       ]
     },
