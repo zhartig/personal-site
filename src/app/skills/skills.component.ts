@@ -208,6 +208,10 @@ export class SkillsComponent implements OnInit {
     {
       domain: 'Devops',
       name: 'Gradle'
+    },
+    {
+      domain: 'Devops',
+      name: 'Liquibase'
     }
   ]
 
