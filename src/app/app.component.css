@@ -1,4 +1,4 @@
-.toolbar > a {
+.toolbar a {
     color: white;
 }
 :host {
@@ -27,6 +27,19 @@ p {
     flex: 1;
 }
 
+.mobile-header mat-drawer-content {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+}
+
+.mobile-header mat-drawer {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+}
+
+
 .toolbar {
     position: absolute;
     top: 0;
@@ -38,6 +51,14 @@ p {
     background-color: #1976d2;
     color: white;
     font-weight: 600;
+}
+
+.toolbar-content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .toolbar img {
