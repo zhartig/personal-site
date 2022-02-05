@@ -146,9 +146,8 @@ export class ProjectsComponent implements OnInit {
           `To help ensure people could enter the park when it opened, I built a simple site with an Angular front end, 
           and an express backend.  The site would allow each member to select a limited amount a reservations per day, 
           and enforce the 10 person max at a time.`,
-
-          `View it on Github -- TODO make public & push backend`
-      ]
+      ],
+      link: 'https://github.com/zhartig/park-covid-capacity-manager'
     },
     {
       name: 'Dog Park Messenger',
@@ -163,8 +162,8 @@ export class ProjectsComponent implements OnInit {
           Users would text the email address, and the application would then publish the message to all other users, 
           with info about who sent it.`,
 
-        `View it on Github -- TODO make public`
-      ]
+      ],
+      link: 'https://github.com/zhartig/dogpark-messenger'
     },
   ]
 

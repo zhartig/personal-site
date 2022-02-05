@@ -36,6 +36,7 @@
                     <p *ngFor="let desc of skill.description">
                         {{desc}}
                     </p>
+                    <a *ngIf="skill.link" [href]="skill.link" target="_blank">View it on Github</a>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>

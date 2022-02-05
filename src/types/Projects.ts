@@ -3,4 +3,5 @@ export interface Project {
     time?: string;
     employer?: string;
     description: string[];
+    link?: string;
 }
