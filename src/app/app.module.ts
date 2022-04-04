@@ -16,6 +16,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
 import {MatRippleModule} from "@angular/material/core";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatRippleModule} from "@angular/material/core";
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
-    MatRippleModule
+    MatRippleModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

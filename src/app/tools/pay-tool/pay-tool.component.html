@@ -1,0 +1,131 @@
+<div class="mt-3 mx-3">
+    <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select [(ngModel)]="taxCalculator.userData.fillingStatus">
+            <mat-option [value]="'single'">
+                Single
+            </mat-option>
+            <mat-option [value]="'married'">
+                Married
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Yearly Salary</mat-label>
+        <input matInput type="number" [(ngModel)]="taxCalculator.userData.yearlySalary">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Yearly Bonus</mat-label>
+        <input matInput type="number" [(ngModel)]="taxCalculator.userData.yearlyBonus">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Pre-tax Retirement Contributions</mat-label>
+        <input matInput type="number" [(ngModel)]="taxCalculator.userData.retirement">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Roth Retirement Contributions</mat-label>
+        <input matInput type="number" [(ngModel)]="taxCalculator.userData.rothRetirement">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>HSA</mat-label>
+        <input matInput type="number" [(ngModel)]="taxCalculator.userData.hsa">
+    </mat-form-field>
+
+<!--    <mat-form-field appearance="fill">-->
+<!--        <mat-label>IRA (pretax)</mat-label>-->
+<!--        <input matInput type="number" [(ngModel)]="taxCalculator.userData.ira">-->
+<!--    </mat-form-field>-->
+
+    <mat-form-field appearance="fill">
+        <mat-label>State</mat-label>
+        <mat-select [(ngModel)]="taxCalculator.userData.state">
+            <mat-option [value]="'maryland'">
+                Maryland
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class="mt-3 mx-3">
+    <div class="card">
+        <h3>Yearly</h3>
+        <dl class="inline">
+            <dt>Gross Income: </dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.grossIncome | number: '1.0-2'}}</dd>
+            <dt>Net Income: </dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.netIncome | number: '1.0-2'}}</dd>
+
+            <hr>
+
+            <dt>Total Taxes: </dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.totalTaxes}}</dd>
+            <dt>Federal Income Taxes Owed: </dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.federalIncomeTaxes | number: '1.0-2'}}</dd>
+            <dt>State Income Taxes Owed: </dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.stateIncomeTaxes | number: '1.0-2'}}</dd>
+            <dt>Social Security Taxes Owed: </dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.socialSecurityTaxes | number: '1.0-2'}}</dd>
+            <dt>Medicare Taxes Owed: </dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.medicareTaxes | number: '1.0-2'}}</dd>
+
+            <hr>
+
+            <dt>Total Deductions: </dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.totalContributions}}</dd>
+            <dt>Pre-tax Retirement Plan Deductions</dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.retirementContributions | number: '1.0-2'}}</dd>
+            <dt>Roth Retirement Plan Deductions</dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.rothRetirementContributions | number: '1.0-2'}}</dd>
+            <dt>HSA</dt>
+            <dd>{{taxCalculator.taxAnalysis.yearly.hsaContributions | number: '1.0-2'}}</dd>
+        </dl>
+    </div>
+
+    <div class="card mt-3">
+        <table mat-table [dataSource]="taxCalculator.taxAnalysis.paycheck">
+            <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">{{element.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Gross Income">
+                <th mat-header-cell *matHeaderCellDef>Gross Income</th>
+                <td mat-cell *matCellDef="let element">{{element.grossIncome | number: '1.0-2'}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Net Income">
+                <th mat-header-cell *matHeaderCellDef>Gross Income</th>
+                <td mat-cell *matCellDef="let element">{{element.netIncome | number: '1.0-2'}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Total Taxes">
+                <th mat-header-cell *matHeaderCellDef>Total Taxes</th>
+                <td mat-cell *matCellDef="let element">{{element.totalTaxes | number: '1.0-2'}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Federal Taxes">
+                <th mat-header-cell *matHeaderCellDef>Federal Taxes</th>
+                <td mat-cell *matCellDef="let element">{{element.federalIncomeTaxes | number: '1.0-2'}}</td>
+            </ng-container>
+            <ng-container matColumnDef="State Taxes">
+                <th mat-header-cell *matHeaderCellDef>State Taxes</th>
+                <td mat-cell *matCellDef="let element">{{element.stateIncomeTaxes | number: '1.0-2'}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Social Security Taxes">
+                <th mat-header-cell *matHeaderCellDef>Social Security Taxes</th>
+                <td mat-cell *matCellDef="let element">{{element.socialSecurityTaxes | number: '1.0-2'}}</td>
+            </ng-container>
+            <ng-container matColumnDef="Medicare Taxes">
+                <th mat-header-cell *matHeaderCellDef>Medicare Taxes</th>
+                <td mat-cell *matCellDef="let element">{{element.medicareTaxes | number: '1.0-2'}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="monthlyHeaders"></tr>
+            <tr mat-row *matRowDef="let row; columns: monthlyHeaders;"></tr>
+        </table>
+    </div>
+    <pre>
+        {{taxCalculator.taxAnalysis | json}}
+    </pre>
+</div>

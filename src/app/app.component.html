@@ -23,7 +23,12 @@
                 <a class="px-2" routerLink="skills">Skills</a>
                 <a class="px-2" routerLink="education">Education</a>
                 <a class="px-2" routerLink="projects">Projects & Work Experience</a>
+                <a class="px-2" [matMenuTriggerFor]="toolsMenu">Tools</a>
                 <a class="px-2" href="assets/zhartig_resume.pdf">Resume</a>
+
+                <mat-menu #toolsMenu="matMenu">
+                    <a mat-menu-item routerLink="tools/pay-tool"> Take Home Pay/Tax Estimator</a>
+                </mat-menu>
             </div>
             <div class="spacer"></div>
             <a href="https://github.com/zhartig" target="_blank" style="width: 40px">
